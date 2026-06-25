@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { @apply border-scholar-border dark:border-scholar-border-dark; }
+  body {
+    @apply font-sans bg-scholar-bg dark:bg-scholar-bg-dark text-scholar-text dark:text-scholar-text-dark antialiased;
+  }
+  ::selection { @apply bg-scholar-accent/20; }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { @apply bg-transparent; }
+  ::-webkit-scrollbar-thumb { @apply bg-scholar-border dark:bg-scholar-border-dark rounded-full; }
+}
+
+@layer components {
+  .card {
+    @apply bg-scholar-surface dark:bg-scholar-surface-dark rounded-2xl border shadow-card transition-shadow duration-200;
+  }
+  .card-hover {
+    @apply card hover:shadow-card-hover;
+  }
+  .glass {
+    @apply bg-white/70 dark:bg-scholar-bg-dark/70 backdrop-blur-xl;
+  }
+  .input-field {
+    @apply w-full bg-scholar-surface dark:bg-scholar-surface-dark border rounded-xl px-4 py-2.5 text-sm placeholder-scholar-muted dark:placeholder-scholar-muted-dark focus:outline-none focus:ring-2 focus:ring-scholar-accent/30 focus:border-scholar-accent transition-all;
+  }
+  .badge-subject {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+  .btn-ghost {
+    @apply p-2 rounded-xl text-scholar-muted dark:text-scholar-muted-dark hover:bg-black/5 dark:hover:bg-white/5 transition-colors;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+}
