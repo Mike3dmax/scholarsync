@@ -31,7 +31,7 @@ export default function Settings() {
 
   function handleLogout() {
     logout();
-    navigate('/auth/login');
+    navigate('/');
   }
 
   const isDark = user?.theme === 'dark';
@@ -76,7 +76,7 @@ export default function Settings() {
       <Card className="p-5">
         <div className="flex items-center justify-between mb-4">
           <h3 className="font-bold text-sm">Subjects</h3>
-          <Button size="sm" variant="secondary" onClick={() => setShowNewSubject(true)}><Plus size={14} /> Add</Button>
+          <Button size="sm" variant="secondary" onClick={() => setShowNewSubject(true)} className="border-blue-500 text-blue-600 dark:text-blue-400"><Plus size={14} /> Add</Button>
         </div>
         <div className="space-y-2">
           {subjects.map(s => (
